@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "LogoRank",
+      "hasCanvas": false,
+      "bodyTextLen": 1224,
+      "bodyTextHash": "9d1d334a26a9521099834d70671843e15b9b25f4a7f7cd502850ea07aba4fca9",
+      "bodyTextPrefix": "LogoRank Salón de la fama Pujar RANKING PÚBLICO Paga para ser vi",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "LogoRank",
+      "hasCanvas": false,
+      "bodyTextLen": 1207,
+      "bodyTextHash": "8cf33cdc508cbd22c90f5089410a2cfd0c9c6f0014508007eb4683fb6f671b25",
+      "bodyTextPrefix": "LogoRank Pujar RANKING PÚBLICO Paga para ser visto. Sube el logo",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

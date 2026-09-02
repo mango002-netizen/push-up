@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #f3f1ec;
+  --color-foreground: #141413;
+  --color-card: #fffcf7;
+  --color-card-foreground: #141413;
+  --color-muted: #e7e4dc;
+  --color-muted-foreground: #6f6e69;
+  --color-primary: #141413;
+  --color-primary-foreground: #f3f1ec;
+  --color-accent: #eceae3;
+  --color-accent-foreground: #141413;
+  --color-border: color-mix(in oklab, #141413 12%, transparent);
+  --color-ring: #141413;
+  --color-destructive: #8f2d21;
+
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+
+  --shadow-border:
+    0px 0px 0px 1px rgba(20, 20, 19, 0.06),
+    0px 1px 2px -1px rgba(20, 20, 19, 0.06),
+    0px 2px 4px 0px rgba(20, 20, 19, 0.04);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(20, 20, 19, 0.1),
+    0px 1px 2px -1px rgba(20, 20, 19, 0.08),
+    0px 2px 4px 0px rgba(20, 20, 19, 0.06);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dark {
+  --color-background: #0c0c0b;
+  --color-foreground: #f2f1ec;
+  --color-card: #161614;
+  --color-card-foreground: #f2f1ec;
+  --color-muted: #1e1e1b;
+  --color-muted-foreground: #a3a29a;
+  --color-primary: #eceae3;
+  --color-primary-foreground: #141413;
+  --color-accent: #1c1c19;
+  --color-accent-foreground: #f2f1ec;
+  --color-border: color-mix(in oklab, #f2f1ec 12%, transparent);
+  --color-ring: #eceae3;
+  --color-destructive: #e07064;
+  --shadow-border: 0 0 0 1px rgba(242, 241, 236, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(242, 241, 236, 0.14);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img.logo-img {
+    outline: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+    outline-offset: -1px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.logo-frame {
+  width: var(--logo-w);
+  transition: width 500ms var(--ease-smooth-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-frame,
+  .crown-layer,
+  .stagger-in {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.stagger-in {
+  animation: fade-up 400ms var(--ease-smooth-out) both;
+}
+
+@keyframes crown-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes crown-mark {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.crown-layer {
+  animation: crown-in 250ms var(--ease-smooth-out) both;
+}
+
+.crown-mark {
+  animation: crown-mark 500ms var(--ease-smooth-out) both;
+}
